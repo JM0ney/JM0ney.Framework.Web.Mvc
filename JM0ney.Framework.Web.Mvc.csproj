@@ -74,13 +74,18 @@
     <Compile Include="ActionFilters\DynamicLocalizationActionFilter.cs" />
     <Compile Include="Controllers\WebApiIntegratedController.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
-    <Compile Include="ErrorMessages.Designer.cs">
+    <Compile Include="Localization\ErrorMessages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ErrorMessages.resx</DependentUpon>
     </Compile>
     <Compile Include="Helpers\HtmlHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
+    <Compile Include="Localization\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
     <Compile Include="ModelBinders\DefaultModelBinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationAttributes\ISelectionItem.cs" />
@@ -94,6 +99,10 @@
       <Project>{20848906-7469-4336-b42d-63c1e70bbe67}</Project>
       <Name>JM0ney.AssetLibrary.ViewModels</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JM0ney.Framework.Data\JM0ney.Framework.Data.csproj">
+      <Project>{e87fd5f2-8fbf-428f-becc-d5c6cc3ffe09}</Project>
+      <Name>JM0ney.Framework.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JM0ney.Framework.Web.WebAPI\JM0ney.Framework.Web.WebAPI.csproj">
       <Project>{386ba163-98ca-4cd5-b063-7f0f13794eaf}</Project>
       <Name>JM0ney.Framework.Web.WebAPI</Name>
@@ -106,18 +115,19 @@
       <Project>{b367f991-3b9e-402f-a7f5-eb80679e4953}</Project>
       <Name>JM0ney.Framework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\JM0ney.Localization\JM0ney.Localization.csproj">
-      <Project>{79ee40ac-f654-4faf-bdea-82e88a9f5813}</Project>
-      <Name>JM0ney.Localization</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ErrorMessages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+    <EmbeddedResource Include="Localization\ErrorMessages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Localization</CustomToolNamespace>
+      <CustomToolNamespace>JM0ney.Framework.Web.Mvc.Localization</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

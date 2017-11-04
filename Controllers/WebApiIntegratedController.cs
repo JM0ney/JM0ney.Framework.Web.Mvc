@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using JM0ney.Framework;
 using JM0ney.AssetLibrary.ViewModels;
+using JM0ney.Framework.Data.Localization;
 
 namespace JM0ney.Framework.Web.Mvc.Controllers {
 
@@ -123,21 +124,21 @@ namespace JM0ney.Framework.Web.Mvc.Controllers {
         protected virtual ActionResult OnNewRedirect( bool setActionStatusMessage, TViewModel viewModel ) {
             // After a record is created, redirect to edit it
             if ( setActionStatusMessage )
-                this.SetActionStatusMessage( Result.SuccessResult( String.Format( Localization.Messages.Created_FS, this.FriendlyNameSingular ) ) );
+                this.SetActionStatusMessage( Result.SuccessResult( String.Format(  Messages.Created_FS, this.FriendlyNameSingular ) ) );
             return this.RedirectToAction( "Edit", new { identity = viewModel.Identity } );
         }
 
         protected virtual ActionResult OnEditRedirect( bool setActionStatusMessage, TViewModel viewModel ) {
             // After a record is edited, redirect to edit it again
             if ( setActionStatusMessage )
-                this.SetActionStatusMessage( Result.SuccessResult( String.Format( Localization.Messages.Edited_FS, this.FriendlyNameSingular ) ) );
+                this.SetActionStatusMessage( Result.SuccessResult( String.Format( Messages.Edited_FS, this.FriendlyNameSingular ) ) );
             return this.RedirectToAction( "Edit", new { identity = viewModel.Identity } );
         }
 
         protected virtual ActionResult OnDeleteRedirect( bool setActionStatusMessage, TViewModel viewModel ) {
             // After deleting, redirect to the index page
             if ( setActionStatusMessage )
-                this.SetActionStatusMessage( Result.SuccessResult( String.Format( Localization.Messages.Deleted_FS, this.FriendlyNameSingular ) ) );
+                this.SetActionStatusMessage( Result.SuccessResult( String.Format( Messages.Deleted_FS, this.FriendlyNameSingular ) ) );
             return this.RedirectToAction( "Index" );
         }
 

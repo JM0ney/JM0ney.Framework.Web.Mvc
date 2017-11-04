@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Localization {
+namespace JM0ney.Framework.Web.Mvc.Localization {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Localization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ErrorMessages {
+    internal class Messages {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ErrorMessages() {
+        internal Messages() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Localization {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("JM0ney.Framework.Web.Mvc.ErrorMessages", typeof(ErrorMessages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("JM0ney.Framework.Web.Mvc.Localization.Messages", typeof(Messages).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,24 +57,6 @@ namespace Localization {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} must be applied to a property whose type is IEnumerable..
-        /// </summary>
-        internal static string SelectionRequiredAttributeIEnumerable_FS {
-            get {
-                return ResourceManager.GetString("SelectionRequiredAttributeIEnumerable_FS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} must be applied to a property whose type is IEnumerable, and each enumerable item must implement {1}..
-        /// </summary>
-        internal static string SelectionRequiredAttributeISelectionItem_FS {
-            get {
-                return ResourceManager.GetString("SelectionRequiredAttributeISelectionItem_FS", resourceCulture);
             }
         }
     }
