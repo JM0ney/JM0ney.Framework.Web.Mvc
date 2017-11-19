@@ -11,18 +11,35 @@ using System.Web.Mvc;
 
 namespace JM0ney.Framework.Web.Mvc.Helpers {
 
+
+    /// <summary>
+    /// Default parts of the Route to inquire about
+    /// </summary>
+    public enum RouteParts {
+        Controller,
+        Action,
+        Area
+    }
+
     /// <summary>
     /// Extension methods for <see cref="System.Web.Mvc.HtmlHelper"/>
     /// </summary>
     public static class HtmlHelper {
 
+
         /// <summary>
-        /// Default parts of the Route to inquire about
+        /// Returns a "checked" attribute if the <paramref name="booleanExpression"/> evaluates to true.
         /// </summary>
-        public enum RouteParts {
-            Controller,
-            Action,
-            Area
+        /// <typeparam name="TModel"></typeparam>
+        /// <param name="htmlHelper"></param>
+        /// <param name="booleanExpression"></param>
+        /// <returns></returns>
+        public static MvcHtmlString CheckedAttributeFor<TModel>( this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, Boolean>> booleanExpression ) {
+            String returnString = String.Empty;
+            bool isSelected = booleanExpression.Compile( ).Invoke( htmlHelper.ViewData.Model );
+            if ( isSelected )
+                returnString = "checked";
+            return MvcHtmlString.Create( returnString );
         }
 
         /// <summary>
@@ -46,7 +63,7 @@ namespace JM0ney.Framework.Web.Mvc.Helpers {
         }
 
         /// <summary>
-        /// Based on the <paramref name="booleanExpression"/> provided, returns a "selected" attribute if true is the result of the evaluation
+        /// Returns a "selected" attribute if the <paramref name="booleanExpression"/> evaluates to true.
         /// </summary>
         /// <typeparam name="TModel"></typeparam>
         /// <param name="htmlHelper"></param>
