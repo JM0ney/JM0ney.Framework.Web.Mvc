@@ -65,6 +65,15 @@ namespace JM0ney.Framework.Web.Mvc.Controllers {
             }
         }
 
+        protected virtual void SetActionStatusMessage( bool isSuccess, String message, bool clientIsRedirecting = true ) {
+            Result result;
+            if ( isSuccess )
+                result = Result.SuccessResult( message );
+            else
+                result = Result.ErrorResult( message );
+            this.SetActionStatusMessage( result, clientIsRedirecting );
+        }
+
         protected virtual void FillViewData( ) { }
 
         protected virtual void FillHtmlDocumentViewData(String documentTitle, String metaDescription, String metaKeywords = "" ) {

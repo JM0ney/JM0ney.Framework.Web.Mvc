@@ -34,6 +34,12 @@ namespace JM0ney.Framework.Web.Mvc.ActionFilters {
             ActionStatusCookieInvalidatorActionFilter.MessageCookieName = messageCookieName;
         }
 
+        /// <summary>
+        /// Constructs the <see cref="ActionStatusCookieInvalidatorActionFilter" /> using a default cookie name
+        /// </summary>
+        public ActionStatusCookieInvalidatorActionFilter( ) {
+        }
+
         #endregion Constructor(s)
 
         #region Properties
