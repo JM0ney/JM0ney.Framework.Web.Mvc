@@ -43,6 +43,22 @@ namespace JM0ney.Framework.Web.Mvc.Helpers {
         }
 
         /// <summary>
+        /// Reads and returns the description from the expression's metadata
+        /// </summary>
+        /// <typeparam name="TModel"></typeparam>
+        /// <typeparam name="TValue"></typeparam>
+        /// <param name="self"></param>
+        /// <param name="expression"></param>
+        /// <returns></returns>
+        public static MvcHtmlString DescriptionFor<TModel, TValue>( this HtmlHelper<TModel> self, Expression<Func<TModel, TValue>> expression ) {
+            var metadata = ModelMetadata.FromLambdaExpression( expression, self.ViewData );
+            var description = metadata.Description;
+
+            return MvcHtmlString.Create( description );
+        }
+
+
+        /// <summary>
         /// Returns a particular portion of the RouteData
         /// </summary>
         /// <param name="htmlHelper"></param>
