@@ -78,6 +78,14 @@ namespace JM0ney.Framework.Web.Mvc.Helpers {
             return returnValue;
         }
 
+        public static MvcHtmlString ReCaptchaComponent( ) {
+            return ActionFilters.ReCaptchaValidationActionFilter.RenderComponent( );
+        }
+
+        public static MvcHtmlString ReCaptchaScript( ) {
+            return ActionFilters.ReCaptchaValidationActionFilter.RenderScriptReference( );
+        }
+
         /// <summary>
         /// Returns a "selected" attribute if the <paramref name="booleanExpression"/> evaluates to true.
         /// </summary>

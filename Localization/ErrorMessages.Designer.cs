@@ -61,6 +61,15 @@ namespace JM0ney.Framework.Web.Mvc.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bleep. Bloop. Are you sure you&apos;re not a robot?.
+        /// </summary>
+        public static string ReCaptchaFailed {
+            get {
+                return ResourceManager.GetString("ReCaptchaFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} must be applied to a property whose type is IEnumerable..
         /// </summary>
         public static string SelectionRequiredAttributeIEnumerable_FS {
